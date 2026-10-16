@@ -6,6 +6,10 @@ Load and test a saved BM3 model checkpoint
 
 import torch
 import argparse
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# Load and test trained BM3 models
+
 import sys
 import os
 
