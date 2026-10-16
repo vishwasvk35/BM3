@@ -1,5 +1,8 @@
 # BM3: Bootstrap Latent Representations for Multi-Modal Recommendation
 
+[![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
+[![PyTorch](https://img.shields.io/badge/PyTorch-1.9+-ee4c2c.svg)](https://pytorch.org/)
+
 <div align="center">
   <img src="images/bm3.png" alt="BM3 Architecture" width="600"/>
 </div>
