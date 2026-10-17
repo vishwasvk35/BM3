@@ -3,9 +3,9 @@ USER_ID_FIELD: userID  # User ID column name
 ITEM_ID_FIELD: itemID  # Item ID column name
 TIME_FIELD: timestamp   # Timestamp column name
 
-filter_out_cod_start_users: True
+filter_out_cod_start_users: True  # Filter users with insufficient history
 
-inter_file_name: 'baby.inter'
+inter_file_name: 'baby.inter'  # Interaction data file
 
 # name of features
 vision_feature_file: 'image_feat.npy'
