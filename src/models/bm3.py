@@ -20,6 +20,13 @@ from common.loss import EmbLoss
 
 class BM3(GeneralRecommender):
     def __init__(self, config, dataset):
+        """
+        Initialize BM3 model with configuration and dataset.
+        
+        Args:
+            config: Configuration object containing hyperparameters
+            dataset: Dataset object with user-item interactions and features
+        """
         super(BM3, self).__init__(config, dataset)
 
         self.embedding_dim = config['embedding_size']
