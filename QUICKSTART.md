@@ -1,6 +1,6 @@
 # BM3 Quick Start Guide
 
-## 🚀 To Reuse an Existing Model
+## 🚀 Quick Start Options
 
 ### Option 1: Download Trained Model (5 minutes)
 
