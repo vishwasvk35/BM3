@@ -1,8 +1,7 @@
 # Common Features
-USER_ID_FIELD: userID
-ITEM_ID_FIELD: itemID
-#RATING_FIELD: rating
-TIME_FIELD: timestamp
+USER_ID_FIELD: userID  # User ID column name
+ITEM_ID_FIELD: itemID  # Item ID column name
+TIME_FIELD: timestamp   # Timestamp column name
 
 filter_out_cod_start_users: True
 
