@@ -367,7 +367,7 @@ Best Model Checkpoint: models/trained/baby/BM3-Oct-20-2026-12-11-13.pth
 ### Prerequisites
 
 ```bash
-# Python 3.8+
+# Python 3.8 or higher required
 pip install -r requirements.txt
 ```
 
