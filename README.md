@@ -393,6 +393,8 @@ python main.py -d baby -m BM3
 
 ### 2. Loading and Testing a Trained Model
 
+Load and evaluate a pre-trained model on the test set:
+
 ```bash
 cd src
 python load_and_test.py \
