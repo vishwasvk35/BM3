@@ -71,11 +71,11 @@ grep "+++++Finished training" -A 10 training_output.log
 ## 📁 File Locations
 
 - **Training script**: `src/main.py`
-- **Test script**: `src/load_and_test.py` ✨ (newly created)
-- **Download script**: `download_trained.sh` ✨ (newly created)
+- **Evaluation script**: `src/load_and_test.py`
+- **Download script**: `download_trained.sh`
 - **Training logs**: `src/log/`
 - **Training output**: `src/training_output.log`
-- **Models (when saved)**: `src/saved/` or `models/trained/`
+- **Saved models**: `src/saved/` or `models/trained/`
 
 ---
 
