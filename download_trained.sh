@@ -1,6 +1,6 @@
 #!/bin/bash
 # Download trained BM3 models from Google Drive
-# Models trained on this device
+# Models were trained on Amazon datasets (Baby, Sports, Electronics)
 
 echo "BM3 Trained Models Downloader"
 echo "=================================="
