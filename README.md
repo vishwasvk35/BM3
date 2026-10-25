@@ -372,11 +372,11 @@ pip install -r requirements.txt
 ```
 
 **Main Dependencies:**
-- PyTorch 1.10+
-- NumPy
-- SciPy
-- PyYAML
-- Matplotlib
+- PyTorch 1.10+ (Deep learning framework)
+- NumPy (Numerical computing)
+- SciPy (Sparse matrix operations)
+- PyYAML (Configuration management)
+- Matplotlib (Visualization)
 
 ### 1. Training a Model
 
