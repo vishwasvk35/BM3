@@ -428,7 +428,7 @@ python load_and_test.py \
 
 ## 📚 Citation
 
-If you use this code or the BM3 model, please cite:
+If you use this implementation in your research, please cite the original BM3 paper:
 
 ```bibtex
 @inproceedings{zhou2023bootstrap,
