@@ -1,0 +1,148 @@
+25 Oct 15:32    INFO ██Server: 	vishwas-Vostro-3420
+25 Oct 15:32    INFO ██Dir: 	/home/vishwas/Desktop/RDS/BM3_implementation/src
+
+25 Oct 15:32    INFO 
+gpu_id=0
+use_gpu=True
+seed=[999]
+data_path=../data/
+inter_splitting_label=x_label
+filter_out_cod_start_users=True
+is_multimodal_model=True
+checkpoint_dir=saved
+save_recommended_topk=True
+recommend_topk=recommend_topk/
+embedding_size=64
+epochs=1000
+stopping_step=20
+train_batch_size=2048
+learner=adam
+learning_rate=0.001
+learning_rate_scheduler=[1.0, 50]
+eval_step=1
+training_neg_sample_num=1
+use_neg_sampling=False
+use_full_sampling=False
+NEG_PREFIX=neg__
+USER_ID_FIELD=userID
+ITEM_ID_FIELD=itemID
+TIME_FIELD=timestamp
+field_separator=	
+metrics=['Recall', 'NDCG', 'Precision', 'MAP']
+topk=[5, 10, 20, 50]
+valid_metric=Recall@20
+eval_batch_size=4096
+use_raw_features=False
+max_txt_len=32
+max_img_size=256
+vocab_size=30522
+type_vocab_size=2
+hidden_size=4
+pad_token_id=0
+max_position_embeddings=512
+layer_norm_eps=1e-12
+hidden_dropout_prob=0.1
+end2end=False
+hyper_parameters=['n_layers', 'reg_weight', 'dropout', 'seed']
+inter_file_name=baby.inter
+vision_feature_file=image_feat.npy
+text_feature_file=text_feat.npy
+user_graph_dict_file=user_graph_dict.npy
+feat_embed_dim=64
+n_layers=[1, 2]
+dropout=[0.3, 0.5]
+reg_weight=[0.1, 0.01]
+cl_weight=2.0
+model=BM3
+dataset=baby
+valid_metric_bigger=True
+device=cpu
+
+
+25 Oct 15:32    INFO baby
+The number of users: 19445
+Average actions of users: 8.269066598097197
+The number of items: 7050
+Average actions of items: 22.807375886524824
+The number of inters: 160792
+The sparsity of the dataset: 99.8827082752043%
+25 Oct 15:32    INFO 
+====Training====
+baby
+The number of users: 19445
+Average actions of users: 6.096734379017742
+The number of items: 7047
+Average actions of items: 16.82290336313325
+The number of inters: 118551
+The sparsity of the dataset: 99.9134846831415%
+25 Oct 15:32    INFO 
+====Validation====
+baby
+The number of users: 19445
+Average actions of users: 1.0572897917202366
+The number of items: 5483
+Average actions of items: 3.749589640707642
+The number of inters: 20559
+The sparsity of the dataset: 99.98071694707788%
+25 Oct 15:32    INFO 
+====Testing====
+baby
+The number of users: 19445
+Average actions of users: 1.1150424273592183
+The number of items: 5549
+Average actions of items: 3.907370697422959
+The number of inters: 21682
+The sparsity of the dataset: 99.97990552482683%
+25 Oct 15:32    INFO 
+
+=================================
+
+
+25 Oct 15:32    INFO =========1/8: Parameters:['n_layers', 'reg_weight', 'dropout', 'seed']=(1, 0.1, 0.3, 999)=======
+/home/vishwas/Desktop/RDS/BM3_implementation/src/models/bm3.py:80: UserWarning: torch.sparse.SparseTensor(indices, values, shape, *, device=) is deprecated.  Please use torch.sparse_coo_tensor(indices, values, shape, dtype=, device=). (Triggered internally at /__w/pytorch/pytorch/torch/csrc/utils/tensor_new.cpp:653.)
+  return torch.sparse.FloatTensor(i, data, torch.Size((self.n_nodes, self.n_nodes)))
+25 Oct 15:32    INFO BM3(
+  (user_embedding): Embedding(19445, 64)
+  (item_id_embedding): Embedding(7050, 64)
+  (predictor): Linear(in_features=64, out_features=64, bias=True)
+  (reg_loss): EmbLoss()
+  (image_embedding): Embedding(7050, 4096)
+  (image_trs): Linear(in_features=4096, out_features=64, bias=True)
+  (text_embedding): Embedding(7050, 384)
+  (text_trs): Linear(in_features=384, out_features=64, bias=True)
+)
+Trainable parameters: 33570688
+25 Oct 15:32    INFO epoch 0 training [time: 16.42s, train loss: 411.1782]
+Traceback (most recent call last):
+  File "/home/vishwas/Desktop/RDS/BM3_implementation/src/main.py", line 27, in <module>
+    quick_start(model=args.model, dataset=args.dataset, config_dict=config_dict, save_model=True)
+  File "/home/vishwas/Desktop/RDS/BM3_implementation/src/utils/quick_start.py", line 81, in quick_start
+    best_valid_score, best_valid_result, best_test_upon_valid = trainer.fit(train_data, valid_data=valid_data, test_data=test_data, saved=save_model)
+                                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vishwas/Desktop/RDS/BM3_implementation/src/common/trainer.py", line 227, in fit
+    valid_score, valid_result = self._valid_epoch(valid_data)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vishwas/Desktop/RDS/BM3_implementation/src/common/trainer.py", line 171, in _valid_epoch
+    valid_result = self.evaluate(valid_data)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vishwas/Desktop/RDS/.venv/lib/python3.12/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vishwas/Desktop/RDS/BM3_implementation/src/common/trainer.py", line 276, in evaluate
+    return self.evaluator.evaluate(batch_matrix_list, eval_data, is_test=is_test, idx=idx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vishwas/Desktop/RDS/BM3_implementation/src/utils/topk_evaluator.py", line 97, in evaluate
+    result_list = self._calculate_metrics(pos_len_list, bool_rec_matrix)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vishwas/Desktop/RDS/BM3_implementation/src/utils/topk_evaluator.py", line 141, in _calculate_metrics
+    result = metric_fuc(topk_index, pos_len_list)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/vishwas/Desktop/RDS/BM3_implementation/src/utils/metrics.py", line 51, in ndcg_
+    iranks = np.zeros_like(pos_index, dtype=np.float)
+                                            ^^^^^^^^
+  File "/home/vishwas/Desktop/RDS/.venv/lib/python3.12/site-packages/numpy/__init__.py", line 760, in __getattr__
+    raise AttributeError(__former_attrs__[attr], name=None)
+AttributeError: module 'numpy' has no attribute 'float'.
+`np.float` was a deprecated alias for the builtin `float`. To avoid this error in existing code, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
+The aliases was originally deprecated in NumPy 1.20; for more details and guidance see the original release note at:
+    https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
