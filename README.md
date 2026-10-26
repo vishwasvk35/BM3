@@ -380,6 +380,8 @@ pip install -r requirements.txt
 
 ### 1. Training a Model
 
+Train BM3 on a specific dataset:
+
 ```bash
 cd src
 python main.py -d baby -m BM3
