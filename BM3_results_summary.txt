@@ -1,0 +1,76 @@
+========================================
+BM3 (Standard) Training Results Summary
+Sports Dataset - 75 Epochs
+Date: November 16, 2026
+========================================
+
+TRAINING CONFIGURATION:
+- Model: BM3 (Standard)
+- Dataset: Sports
+- Max Epochs: 75
+- Early Stopping: 10 epochs
+- Batch Size: 2048
+- Learning Rate: 0.001
+- Configuration: n_layers=2, dropout=0.3, reg_weight=0.1, cl_weight=2.0
+- Trainable Parameters: 85,983,488
+
+DATASET STATISTICS:
+- Total Users: 35,598
+- Total Items: 18,357
+- Total Interactions: 296,337
+- Sparsity: 99.95%
+
+SPLIT STATISTICS:
+- Training: 218,409 interactions
+- Validation: 37,899 interactions
+- Testing: 40,029 interactions
+
+BEST RESULTS (Epoch 73):
+========================================
+
+VALIDATION SET:
+- Recall@5:  0.0342 (3.42%)
+- Recall@10: 0.0543 (5.43%)
+- Recall@20: 0.0842 (8.42%)  ← Primary Metric
+- Recall@50: 0.1438 (14.38%)
+- NDCG@5:    0.0227
+- NDCG@10:   0.0292
+- NDCG@20:   0.0368
+- NDCG@50:   0.0487
+- Precision@5:  0.0072
+- Precision@10: 0.0057
+- Precision@20: 0.0044
+- Precision@50: 0.0030
+- MAP@5:  0.0187
+- MAP@10: 0.0213
+- MAP@20: 0.0234
+- MAP@50: 0.0252
+
+TEST SET:
+- Recall@5:  0.0345 (3.45%)
+- Recall@10: 0.0551 (5.51%)
+- Recall@20: 0.0869 (8.69%)  ← Primary Metric
+- Recall@50: 0.1467 (14.67%)
+- NDCG@5:    0.0234
+- NDCG@10:   0.0301
+- NDCG@20:   0.0383
+- NDCG@50:   0.0504
+- Precision@5:  0.0076
+- Precision@10: 0.0061
+- Precision@20: 0.0048
+- Precision@50: 0.0033
+- MAP@5:  0.0191
+- MAP@10: 0.0218
+- MAP@20: 0.0239
+- MAP@50: 0.0258
+
+SAVED MODEL:
+- Location: src/saved/BM3-sports-Nov-16-2026-11-57-43.pth
+- Best Epoch: 73
+- Training Time: ~2 hours (75 epochs)
+
+NOTES:
+- Model showed steady improvement throughout training
+- Best performance at epoch 73
+- Training completed all 75 epochs
+- Significantly outperforms BM3SimSiam variant

@@ -33,9 +33,15 @@ def get_model(model_name):
         Recommender: model class
     """
     model_file_name = model_name.lower()
+    # Handle special case for BM3SimSiam -> bm3_simsiam
+    if model_file_name == 'bm3simsiam':
+        model_file_name = 'bm3_simsiam'
+    
     module_path = '.'.join(['models', model_file_name])
     if importlib.util.find_spec(module_path, __name__):
         model_module = importlib.import_module(module_path, __name__)
+    else:
+        raise ImportError(f"Cannot find model module: {module_path}")
 
     model_class = getattr(model_module, model_name)
     return model_class

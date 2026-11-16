@@ -60,3 +60,44 @@ class L2Loss(nn.Module):
         for embedding in embeddings:
             l2_loss += torch.sum(embedding**2)*0.5
         return l2_loss
+
+
+class SimSiamLoss(nn.Module):
+    """ SimSiam Loss: Negative Cosine Similarity
+    
+    Implements the loss function used in SimSiam:
+        L = -cosine_similarity(p, z.detach())
+    
+    where p is the predictor output and z is the encoder output (with stop-gradient).
+    
+    Args:
+        - prediction: (N, D) predictor output
+        - target: (N, D) encoder output (should be detached before passing)
+        
+    Returns:
+        - loss: scalar, negative cosine similarity
+        
+    Example::
+        >>> loss_fn = SimSiamLoss()
+        >>> p = torch.randn(32, 128, requires_grad=True)
+        >>> z = torch.randn(32, 128).detach()  # stop-gradient
+        >>> loss = loss_fn(p, z)
+        >>> loss.backward()
+    """
+    def __init__(self):
+        super(SimSiamLoss, self).__init__()
+    
+    def forward(self, prediction, target):
+        """
+        Calculate negative cosine similarity.
+        
+        Args:
+            prediction: (N, D) tensor, predictor output
+            target: (N, D) tensor, encoder output (detached)
+        
+        Returns:
+            torch.Tensor: scalar loss
+        """
+        # Negative cosine similarity
+        loss = -torch.nn.functional.cosine_similarity(prediction, target, dim=-1).mean()
+        return loss

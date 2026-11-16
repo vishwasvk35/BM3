@@ -1,0 +1,17 @@
+embedding_size: 64
+feat_embed_dim: 64
+
+# Use single best values instead of grid search
+n_layers: 2
+dropout: 0.3
+reg_weight: 0.1
+
+# SimSiam specific parameters
+simsiam_weight: 2.0
+simsiam_hidden_dim: 64
+simsiam_output_dim: 128
+
+use_neg_sampling: False
+
+# Empty hyper_parameters means no grid search
+hyper_parameters: []

@@ -1,6 +1,13 @@
 # Data directory - contains large datasets
 data/
 
+*.zip
+*.pdf
+
+# Trained model checkpoints
+src/saved/*.pth
+*.pth
+
 # Trained models - large binary files
 models/trained/
 

@@ -1,0 +1,88 @@
+========================================
+BM3SimSiam Training Results Summary
+Sports Dataset - 75 Epochs
+Date: November 16, 2026
+========================================
+
+TRAINING CONFIGURATION:
+- Model: BM3SimSiam
+- Dataset: Sports
+- Max Epochs: 75
+- Early Stopping: 10 epochs
+- Batch Size: 2048
+- Learning Rate: 0.001
+- Configuration: n_layers=2, dropout=0.3, reg_weight=0.1, simsiam_weight=2.0
+- Trainable Parameters: 86,152,768
+
+DATASET STATISTICS:
+- Total Users: 35,598
+- Total Items: 18,357
+- Total Interactions: 296,337
+- Sparsity: 99.95%
+
+SPLIT STATISTICS:
+- Training: 218,409 interactions
+- Validation: 37,899 interactions
+- Testing: 40,029 interactions
+
+BEST RESULTS (Epoch 69):
+========================================
+
+VALIDATION SET:
+- Recall@5:  0.0123 (1.23%)
+- Recall@10: 0.0208 (2.08%)
+- Recall@20: 0.0372 (3.72%)  ← Primary Metric
+- Recall@50: 0.0695 (6.95%)
+- NDCG@5:    0.0078
+- NDCG@10:   0.0106
+- NDCG@20:   0.0148
+- NDCG@50:   0.0212
+- Precision@5:  0.0026
+- Precision@10: 0.0022
+- Precision@20: 0.0020
+- Precision@50: 0.0015
+- MAP@5:  0.0062
+- MAP@10: 0.0073
+- MAP@20: 0.0084
+- MAP@50: 0.0094
+
+TEST SET:
+- Recall@5:  0.0124 (1.24%)
+- Recall@10: 0.0212 (2.12%)
+- Recall@20: 0.0366 (3.66%)  ← Primary Metric
+- Recall@50: 0.0709 (7.09%)
+- NDCG@5:    0.0076
+- NDCG@10:   0.0105
+- NDCG@20:   0.0145
+- NDCG@50:   0.0214
+- Precision@5:  0.0028
+- Precision@10: 0.0024
+- Precision@20: 0.0020
+- Precision@50: 0.0016
+- MAP@5:  0.0058
+- MAP@10: 0.0069
+- MAP@20: 0.0080
+- MAP@50: 0.0090
+
+TRAINING PROGRESSION:
+========================================
+Epoch 0:  Recall@20 = 0.0029 (0.29%)
+Epoch 10: Recall@20 = 0.0083 (0.83%)
+Epoch 20: Recall@20 = 0.0135 (1.35%)
+Epoch 30: Recall@20 = 0.0199 (1.99%)
+Epoch 40: Recall@20 = 0.0240 (2.40%)
+Epoch 50: Recall@20 = 0.0287 (2.87%)
+Epoch 60: Recall@20 = 0.0326 (3.26%)
+Epoch 69: Recall@20 = 0.0372 (3.72%) ← BEST
+Epoch 74: Recall@20 = 0.0365 (3.65%) - Completed
+
+SAVED MODEL:
+- Location: src/saved/BM3SimSiam-sports-Nov-16-2026-09-43-24.pth
+- Best Epoch: 69
+- Training Time: ~1.5 hours (75 epochs)
+
+NOTES:
+- Model showed steady improvement throughout training
+- Best performance at epoch 69
+- Training stopped after completing all 75 epochs
+- No early stopping triggered (kept improving with fluctuations)

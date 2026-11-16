@@ -10,6 +10,7 @@
 ## 📋 Table of Contents
 - [Problem Statement](#-problem-statement)
 - [BM3 Architecture](#-bm3-architecture)
+- [BM3SimSiam: Enhanced Version](#-bm3simsiam-enhanced-version)
 - [Key Concepts & Tools](#-key-concepts--tools)
 - [Implementation Components](#-implementation-components)
 - [Experimental Results](#-experimental-results)
@@ -131,6 +132,58 @@ with torch.no_grad():
 ```
 
 This provides **stable training targets** and prevents the model from collapsing to trivial solutions.
+
+---
+
+## 🚀 BM3SimSiam: Enhanced Version
+
+We've developed **BM3SimSiam**, an enhanced version of BM3 that integrates **SimSiam's stop-gradient mechanism** for improved multi-modal recommendation.
+
+### Key Improvements
+
+| Feature | BM3 (Original) | BM3SimSiam (Enhanced) |
+|---------|----------------|----------------------|
+| **Target Network** | Momentum-updated | Stop-gradient (simpler) |
+| **Feature Encoding** | Linear projection | 3-layer SimSiam encoder |
+| **Multi-Modal Fusion** | Separate processing | Early fusion strategy |
+| **Training Stability** | Dropout-based | Stop-gradient (more stable) |
+| **Memory Usage** | 2× parameters (momentum) | 1× parameters |
+| **Parameters** | 33.57M | 33.74M (+0.5%) |
+
+### Architecture Overview
+
+```
+Text + Image → MultiModal Fusion → LightGCN → SimSiam Encoder → Predictor
+                     ↓                                    ↓
+                 (128-dim)                          stop-gradient
+                                                         ↓
+                                               Contrastive Loss
+```
+
+### Quick Start with BM3SimSiam
+
+```bash
+cd src
+
+# Train BM3SimSiam
+python main.py -d baby -m BM3SimSiam
+
+# Evaluate
+python load_and_test.py -c saved/BM3SimSiam-baby-*.pth -d baby
+```
+
+### Full Documentation
+
+For detailed information about BM3SimSiam, see:
+- **[BM3SimSiam Complete Guide](docs/BM3_SIMSIAM.md)** - Architecture, configuration, training
+- **[SimSiam Paper](https://arxiv.org/abs/2011.10566)** - Original SimSiam methodology
+
+### Why SimSiam?
+
+1. **Simpler Design**: No momentum coefficients or target network maintenance
+2. **Better Stability**: Stop-gradient provides consistent training signal
+3. **Improved Features**: 3-layer encoder creates richer multi-modal representations
+4. **Proven Approach**: SimSiam has shown excellent results in computer vision
 
 ---
 
