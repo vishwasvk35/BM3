@@ -1,6 +1,5 @@
 # BM3 vs. BM3SimSiam: Experimental Results on the Sports Dataset
-
-**Date:** November 16, 2026  
+ 
 **Document type:** Experimental results report  
 **Status:** Training of BM3SimSiam completed through 600 epochs (interrupted due to technical issues; planned schedule was 1,000 epochs).
 
