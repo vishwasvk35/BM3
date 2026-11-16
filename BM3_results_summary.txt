@@ -12,7 +12,46 @@ TRAINING CONFIGURATION:
 - Batch Size: 2048
 - Learning Rate: 0.001
 - Configuration: n_layers=2, dropout=0.3, reg_weight=0.1, cl_weight=2.0
-- Trainable Parameters: 85,983,488
+- Trainable Modify the provided Markdown (`.md`) file containing the BM3SimSiam training report.
+
+Your task is to transform it into a professional, research-oriented experimental results report.
+
+**Requirements:**
+
+1. Rewrite the report in the style of an actual machine learning experimental report, using formal academic language.
+2. Remove simulation-specific terminology, hypothetical framing, and references to values being artificially assigned.
+3. Present the BM3SimSiam results as experimental results, retaining the supplied numerical values:
+   - Model: BM3SimSiam
+   - Completed epochs: 600
+   - Planned epochs: 1,000
+   - BM3 Recall@20: 0.0869
+   - BM3SimSiam Recall@20: 0.0765
+   - Absolute difference: -0.0104
+   - Relative performance change: -12.0%
+4. Explain that training was interrupted at epoch 600 because of technical issues. Do not imply that all 1,000 epochs were completed.
+5. Maintain a clear comparison between BM3 and BM3SimSiam.
+6. Include sections covering:
+   - Experimental setup
+   - Model architecture
+   - Training progress
+   - Evaluation results
+   - Comparative analysis
+   - Interpretation of results
+   - Limitations
+   - Conclusion
+7. Preserve technical accuracy when describing the architecture. BM3SimSiam is a BM3-inspired graph-based recommendation model incorporating multimodal item features and a SimSiam-style encoder, predictor, and stop-gradient objective. It is a single-view stop-gradient variant, not a conventional two-view Siamese SimSiam architecture.
+8. Remove statements that explicitly describe the results as estimates or simulated values. Do not invent additional metrics, hyperparameters, hardware specifications, dataset configurations, random seeds, or experimental observations.
+9. Do not claim reproducibility or statistical significance without supporting evidence.
+10. Preserve all supplied numerical values and ensure that calculations are mathematically consistent.
+
+**Important constraints:**
+- Modify the original Markdown file directly rather than merely suggesting changes.
+- Preserve its Markdown formatting and use clean, professional tables.
+- Do not modify source code, model implementations, training logs, or other repository files.
+- Do not fabricate missing experimental details.
+- Return the complete revised Markdown file.
+
+The final document should read naturally as a formal experimental report, not as a description of a simulation or a hypothetical exercise.Parameters: 85,983,488
 
 DATASET STATISTICS:
 - Total Users: 35,598
@@ -32,7 +71,46 @@ VALIDATION SET:
 - Recall@5:  0.0342 (3.42%)
 - Recall@10: 0.0543 (5.43%)
 - Recall@20: 0.0842 (8.42%)  ← Primary Metric
-- Recall@50: 0.1438 (14.38%)
+- Recall@50: 0.1438 (14.38Modify the provided Markdown (`.md`) file containing the BM3SimSiam training report.
+
+Your task is to transform it into a professional, research-oriented experimental results report.
+
+**Requirements:**
+
+1. Rewrite the report in the style of an actual machine learning experimental report, using formal academic language.
+2. Remove simulation-specific terminology, hypothetical framing, and references to values being artificially assigned.
+3. Present the BM3SimSiam results as experimental results, retaining the supplied numerical values:
+   - Model: BM3SimSiam
+   - Completed epochs: 600
+   - Planned epochs: 1,000
+   - BM3 Recall@20: 0.0869
+   - BM3SimSiam Recall@20: 0.0765
+   - Absolute difference: -0.0104
+   - Relative performance change: -12.0%
+4. Explain that training was interrupted at epoch 600 because of technical issues. Do not imply that all 1,000 epochs were completed.
+5. Maintain a clear comparison between BM3 and BM3SimSiam.
+6. Include sections covering:
+   - Experimental setup
+   - Model architecture
+   - Training progress
+   - Evaluation results
+   - Comparative analysis
+   - Interpretation of results
+   - Limitations
+   - Conclusion
+7. Preserve technical accuracy when describing the architecture. BM3SimSiam is a BM3-inspired graph-based recommendation model incorporating multimodal item features and a SimSiam-style encoder, predictor, and stop-gradient objective. It is a single-view stop-gradient variant, not a conventional two-view Siamese SimSiam architecture.
+8. Remove statements that explicitly describe the results as estimates or simulated values. Do not invent additional metrics, hyperparameters, hardware specifications, dataset configurations, random seeds, or experimental observations.
+9. Do not claim reproducibility or statistical significance without supporting evidence.
+10. Preserve all supplied numerical values and ensure that calculations are mathematically consistent.
+
+**Important constraints:**
+- Modify the original Markdown file directly rather than merely suggesting changes.
+- Preserve its Markdown formatting and use clean, professional tables.
+- Do not modify source code, model implementations, training logs, or other repository files.
+- Do not fabricate missing experimental details.
+- Return the complete revised Markdown file.
+
+The final document should read naturally as a formal experimental report, not as a description of a simulation or a hypothetical exercise.%)
 - NDCG@5:    0.0227
 - NDCG@10:   0.0292
 - NDCG@20:   0.0368
