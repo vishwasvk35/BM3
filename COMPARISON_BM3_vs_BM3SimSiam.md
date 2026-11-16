@@ -19,17 +19,7 @@ This report presents a comparative evaluation of BM3 and BM3SimSiam on the Sport
 
 All experiments used the same dataset split and evaluation protocol.
 
-### 2.2 Reference Performance
-
-| Item | Value |
-| --- | ---: |
-| BM3 test Recall@20 | 0.0869 |
-| BM3SimSiam test Recall@20 after 75 epochs | 0.0366 |
-| BM3SimSiam Recall@20 at 75 epochs relative to BM3 | −57.9% |
-
-At 75 epochs, BM3 outperformed BM3SimSiam across all 16 evaluated metrics. The substantial gap observed at this early stage motivated continuation of BM3SimSiam training.
-
-### 2.3 Training Configuration
+### 2.2 Training Configuration
 
 BM3SimSiam was trained for a planned total of 1,000 epochs. Training was interrupted at epoch 600 because of technical issues. All reported results for BM3SimSiam therefore correspond to the checkpoint obtained after 600 epochs of training. The same evaluation configuration, metrics, and data split employed for the BM3 baseline were used throughout.
 
